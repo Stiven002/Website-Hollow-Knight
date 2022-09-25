@@ -654,3 +654,14 @@ footer{
         width: 250px;
     }
 }
+
+@media screen and (max-height: 500px) {
+
+    .info h2{
+        font-size: 20px;
+    }
+
+    .info p{
+        font-size: 13px;
+    }
+}
