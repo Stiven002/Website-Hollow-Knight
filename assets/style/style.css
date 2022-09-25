@@ -371,10 +371,10 @@ h3{
 }
 
 /* _________________
-        MULTIPLAYER
+        CONTENT GAME
 ____________________*/
 
-#multi-player{
+#content-game{
     height: 100vh;
     background-image: var(--background-section);
     background-repeat: no-repeat;
@@ -654,3 +654,16 @@ footer{
         width: 250px;
     }
 }
+
+@media screen and (max-height: 590px) {
+    .info{
+        margin: 10px 10px;
+    }
+
+    h2{
+        font-size: 22px;
+    }
+
+    .info p{
+        font-size: 15px;
+    }
