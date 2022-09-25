@@ -88,7 +88,6 @@ const themeButton = document.getElementById('theme-button')
 const themeButtonPc = document.getElementById('theme-button-1')
 const themeButtonLogo = document.getElementById('logo-dark')
 const lightLogo = document.getElementById('logo-light')
-const logoMobilDark = document.getElementById('logo-dark-1') 
 const darkTheme = 'dark-theme'
 const iconTheme = 'bx-sun'
 const LogoTheme = 'active'
@@ -100,8 +99,6 @@ const selectedIcon = localStorage.getItem('selected-icon')
 const selectedIconPc = localStorage.getItem('selected-icon-pc')
 const selectedLogo = localStorage.getItem('selected-logo')
 const selectedLogoLight = localStorage.getItem('selected-logo-light')
-const selectedLogoMobilDark = localStorage.getItem('selected-logo-mobil-dark')
-
 
 
 // We obtain the current theme that the interface has by validating the dark-theme class
@@ -110,7 +107,6 @@ const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'bx-moo
 const getCurrentIconPc = () => themeButtonPc.classList.contains(iconTheme) ? 'bx-moon' : 'bx-sun'
 const getCurrentLogo = () => themeButtonLogo.classList.contains(LogoTheme) ? 'logo' : 'active'
 const getCurrentLogoLight = () => lightLogo.classList.contains(LogoTheme) ? 'active' : 'logo'
-const getCurrentLogoMobil = () => logoMobilDark.classList.contains(LogoTheme) ? 'logo' : 'active'
 // We validate if the user previously chose a topic
 if (selectedTheme) {
   // If the validation is fulfilled, we ask what the issue was to know if we activated or deactivated the dark
@@ -119,7 +115,6 @@ if (selectedTheme) {
     themeButtonPc.classList[selectedIconPc === 'bx-moon' ? 'add' : 'remove'](iconTheme)
     themeButtonLogo.classList[selectedLogo === 'logo' ? 'add' : 'remove'](LogoTheme)
     lightLogo.classList[selectedLogoLight === 'active' ? 'add' : 'remove'](LogoTheme)
-    logoMobilDark.classList[selectedLogoMobilDark === 'logo' ? 'add' : 'remove'](LogoTheme)
 }
 
 // Activate / deactivate the theme manually with the button
@@ -127,14 +122,10 @@ themeButton.addEventListener('click', () => {
     // Add or remove the dark / icon theme
     document.body.classList.toggle(darkTheme)
     themeButton.classList.toggle(iconTheme)
-    logoMobilDark.classList.toggle(LogoTheme)
 
     // We save the theme and the current icon that the user chose
     localStorage.setItem('selected-theme', getCurrentTheme())
     localStorage.setItem('selected-icon', getCurrentIcon())
-    localStorage.setItem('selected-logo-mobil-dark', getCurrentLogoMobil())
-
-
 })
 
 themeButtonPc.addEventListener('click', () => {
